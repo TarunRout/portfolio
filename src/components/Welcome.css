@@ -1,0 +1,21 @@
+.greetings {
+  color: rgb(255, 255, 255);
+  font-size: 5vw;
+}
+.greet-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #151515fa;
+}
+
+.greetings.fade-in {
+  opacity: 1;
+}
+
+.last-one {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.3s linear;
+}
