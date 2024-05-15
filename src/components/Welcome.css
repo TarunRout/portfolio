@@ -8,14 +8,9 @@
   justify-content: center;
   height: 100vh;
   background-color: #151515fa;
+  transition: transform 1s ease-in-out;
 }
 
-.greetings.fade-in {
-  opacity: 1;
-}
-
-.last-one {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.4s, opacity 0.3s linear;
+.greet-container.slideUp {
+  transform: translateY(-100vh);
 }

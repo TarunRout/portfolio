@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./Welcome.css";
 
-export default function Welcome() {
-  const [redirect, setRedirect] = useState(false);
+export default function Welcome({ greetingCompleted, setGreetingCompleted }) {
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
   const greetings = [
     "Hello",
@@ -33,6 +32,7 @@ export default function Welcome() {
 
       if (currentGreetingIndex === greetings.length - 1) {
         clearInterval(interval);
+        setGreetingCompleted(true);
         // setTimeout(() => {
         //   setRedirect(true);
         //   console.log("moved to homepage trigered");
@@ -44,7 +44,7 @@ export default function Welcome() {
   }, [currentGreetingIndex, greetings]);
 
   return (
-    <div className="greet-container">
+    <div className={`greet-container ${greetingCompleted ? "slideUp" : ""}`}>
       <h1
         className={`greetings ${currentGreetingIndex === 7 ? "last-one" : ""}`}
       >
